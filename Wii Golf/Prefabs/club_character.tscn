@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://vkm2fjr8327e"]
+
+[ext_resource type="Script" uid="uid://byj5rvvmx5fax" path="res://Scripts/Club2.gd" id="1_535y1"]
+[ext_resource type="Texture2D" uid="uid://cocpcdjaxfi2" path="res://Sprites/SNES - EarthBound - Miscellaneous - Battle Backgrounds.png" id="2_e65rk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t40kk"]
+atlas = ExtResource("2_e65rk")
+region = Rect2(264.49548, 2875.964, 260.70648, 256.94995)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_535y1"]
+size = Vector2(16, 32)
+
+[node name="Club_Character" type="CharacterBody2D" unique_id=254288553 groups=["Club"]]
+position = Vector2(160, 0)
+script = ExtResource("1_535y1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=140538751]
+position = Vector2(-4.7683716e-06, 4.7683716e-07)
+scale = Vector2(0.061538428, 0.12499999)
+texture = SubResource("AtlasTexture_t40kk")
+
+[node name="Club Pos" type="CollisionShape2D" parent="." unique_id=1947885649 groups=["Club"]]
+shape = SubResource("RectangleShape2D_535y1")
