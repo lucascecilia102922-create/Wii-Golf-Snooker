@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://xxb5lu2aaqst"]
+
+[ext_resource type="Texture2D" uid="uid://dlgqgmldq62lp" path="res://Sprites/Anim hit (3X).png" id="1_h61f4"]
+[ext_resource type="Script" uid="uid://k2pusoikwmes" path="res://Prefabs/hit_smoke.gd" id="2_0wh5x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu23e"]
+atlas = ExtResource("1_h61f4")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny2ev"]
+atlas = ExtResource("1_h61f4")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiy1d"]
+atlas = ExtResource("1_h61f4")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud1os"]
+atlas = ExtResource("1_h61f4")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpmp2"]
+atlas = ExtResource("1_h61f4")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiv05"]
+atlas = ExtResource("1_h61f4")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uybdb"]
+atlas = ExtResource("1_h61f4")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh8xd"]
+atlas = ExtResource("1_h61f4")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5e5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu23e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny2ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiy1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud1os")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpmp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiv05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uybdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh8xd")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 32.0
+}]
+
+[node name="Hit Smoke" type="AnimatedSprite2D" unique_id=4043333]
+scale = Vector2(0.66, 0.66)
+sprite_frames = SubResource("SpriteFrames_x5e5l")
+animation = &"Hit"
+autoplay = "Hit"
+frame = 7
+frame_progress = 1.0
+script = ExtResource("2_0wh5x")
