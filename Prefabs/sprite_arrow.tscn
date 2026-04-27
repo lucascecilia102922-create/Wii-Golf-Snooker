@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d07r4t2uu75vu"]
+
+[ext_resource type="Texture2D" uid="uid://dmpjw1cg08xsb" path="res://Sprites/Arrow (1x).png" id="1_qe8mn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwne5"]
+atlas = ExtResource("1_qe8mn")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpu6p"]
+atlas = ExtResource("1_qe8mn")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op2xg"]
+atlas = ExtResource("1_qe8mn")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nvmp"]
+atlas = ExtResource("1_qe8mn")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el1jj"]
+atlas = ExtResource("1_qe8mn")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03fgm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwne5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpu6p")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_op2xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nvmp")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_el1jj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[node name="Sprite Arrow" type="AnimatedSprite2D" unique_id=990514667]
+position = Vector2(-80, 0)
+rotation = -1.5707963
+sprite_frames = SubResource("SpriteFrames_03fgm")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.48610047

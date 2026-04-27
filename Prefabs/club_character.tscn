@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://vkm2fjr8327e"]
+
+[ext_resource type="Script" uid="uid://byj5rvvmx5fax" path="res://Scripts/Club2.gd" id="1_535y1"]
+[ext_resource type="Texture2D" uid="uid://c6ji3c1msf1q2" path="res://Sprites/Blocky (1x).png" id="2_e65rk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_535y1"]
+size = Vector2(56, 110)
+
+[node name="Club_Character" type="CharacterBody2D" unique_id=254288553 groups=["Club"]]
+position = Vector2(160, 0)
+script = ExtResource("1_535y1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=140538751]
+position = Vector2(7.6293945e-06, 0)
+texture = ExtResource("2_e65rk")
+
+[node name="Club Pos" type="CollisionShape2D" parent="." unique_id=1947885649 groups=["Club"]]
+position = Vector2(-12, 1)
+shape = SubResource("RectangleShape2D_535y1")

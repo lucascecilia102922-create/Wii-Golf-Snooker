@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dqikua20jmhgw"]
+
+[ext_resource type="Texture2D" uid="uid://whhykvx6k48s" path="res://Sprites/Hole 4 3x.png" id="1_mktl5"]
+[ext_resource type="Texture2D" uid="uid://b53amaob8ci6l" path="res://Sprites/Flag 1 (3x).png" id="2_xtouk"]
+[ext_resource type="PackedScene" uid="uid://cy7frvilawaa7" path="res://Prefabs/level_changer.tscn" id="3_xtouk"]
+[ext_resource type="Texture2D" uid="uid://xgiv3oayixsi" path="res://Sprites/Black Hole (1x).png" id="4_xtouk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sopd1"]
+atlas = ExtResource("4_xtouk")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6rrq"]
+atlas = ExtResource("4_xtouk")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ciiv"]
+atlas = ExtResource("4_xtouk")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoegy"]
+atlas = ExtResource("4_xtouk")
+region = Rect2(432, 0, 144, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjbl3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sopd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6rrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ciiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoegy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ciiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6rrq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[node name="Hole 1" type="Node2D" unique_id=324684993]
+
+[node name="Hole Sprite 4" type="Sprite2D" parent="." unique_id=1138705477]
+position = Vector2(7.6293945e-06, 5.722046e-06)
+texture = ExtResource("1_mktl5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2069980858]
+position = Vector2(32, -80)
+texture = ExtResource("2_xtouk")
+
+[node name="Area2D" parent="." unique_id=29184355 instance=ExtResource("3_xtouk")]
+
+[node name="Portal Test Sprite" type="AnimatedSprite2D" parent="." unique_id=1020842528]
+visible = false
+position = Vector2(1.9073486e-06, -1.9073486e-06)
+scale = Vector2(0.6111111, 0.6111111)
+sprite_frames = SubResource("SpriteFrames_cjbl3")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.14579548

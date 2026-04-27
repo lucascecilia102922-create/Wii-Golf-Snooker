@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cy7frvilawaa7"]
+
+[ext_resource type="Script" uid="uid://dnsihj0jcm16g" path="res://Scripts/hole.gd" id="1_gr4sy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wjtap"]
+radius = 32.0
+
+[node name="Area2D" type="Area2D" unique_id=29184355]
+script = ExtResource("1_gr4sy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1783866096]
+shape = SubResource("CircleShape2D_wjtap")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
