@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://qe3s8vgyo46x"]
+
+[ext_resource type="Script" uid="uid://cvss7uy4a6v7l" path="res://Scripts/pause_menu.gd" id="1_emv3i"]
+[ext_resource type="StyleBox" uid="uid://dkckst7bkbupn" path="res://Styles/Button_Style.tres" id="2_1och7"]
+[ext_resource type="FontFile" uid="uid://dnxskmw6kb8ev" path="res://fonts/Peaberry Base/PeaberryBase.woff" id="2_bpi0q"]
+[ext_resource type="Texture2D" uid="uid://c6ji3c1msf1q2" path="res://Sprites/Blocky (1x).png" id="2_k0w1u"]
+[ext_resource type="Script" uid="uid://dqh5n5k64di0t" path="res://Scenes/button.gd" id="4_sjs17"]
+[ext_resource type="StyleBox" uid="uid://47msscsu4r8x" path="res://Styles/Hover_Button.tres" id="4_stj27"]
+[ext_resource type="StyleBox" uid="uid://ba37i7rgeekta" path="res://Styles/Focus_Button.tres" id="5_ix48p"]
+[ext_resource type="Texture2D" uid="uid://delilwt5llv46" path="res://Sprites/Kirby - Hit (3x).png" id="5_myy0f"]
+[ext_resource type="Texture2D" uid="uid://dphjmuuhs3p26" path="res://Sprites/Kirby Base (3x).png" id="6_sjs17"]
+
+[sub_resource type="Theme" id="Theme_k0w1u"]
+
+[sub_resource type="Theme" id="Theme_1och7"]
+default_font = ExtResource("2_bpi0q")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0w1u"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+bg_color = Color(0, 0, 0, 0.6666667)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pjx5"]
+atlas = ExtResource("5_myy0f")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jf5j"]
+atlas = ExtResource("5_myy0f")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8685r"]
+atlas = ExtResource("5_myy0f")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4dmw"]
+atlas = ExtResource("5_myy0f")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he4j0"]
+atlas = ExtResource("6_sjs17")
+region = Rect2(0, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85gyg"]
+atlas = ExtResource("6_sjs17")
+region = Rect2(55, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c32x4"]
+atlas = ExtResource("6_sjs17")
+region = Rect2(110, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg7i4"]
+atlas = ExtResource("6_sjs17")
+region = Rect2(165, 0, 55, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8tnp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pjx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jf5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8685r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4dmw")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he4j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85gyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c32x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg7i4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Pause Menu" type="Control" unique_id=1409773257]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k0w1u")
+script = ExtResource("1_emv3i")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=436319860]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -226.0
+offset_right = 160.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1och7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_k0w1u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=410629215]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=600361514]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Restart")
+theme_override_styles/normal = ExtResource("2_1och7")
+theme_override_styles/hover = ExtResource("4_stj27")
+theme_override_styles/focus = ExtResource("5_ix48p")
+text = "Resume"
+script = ExtResource("4_sjs17")
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer" unique_id=12022604]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Quit to Windows")
+theme_override_styles/normal = ExtResource("2_1och7")
+theme_override_styles/hover = ExtResource("4_stj27")
+theme_override_styles/focus = ExtResource("5_ix48p")
+text = "Restart
+"
+
+[node name="Quit to Windows" type="Button" parent="PanelContainer/VBoxContainer" unique_id=880265086]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Restart")
+theme_override_styles/normal = ExtResource("2_1och7")
+theme_override_styles/hover = ExtResource("4_stj27")
+theme_override_styles/focus = ExtResource("5_ix48p")
+text = "Quit to Windows"
+
+[node name="Pause Bars" type="Node2D" parent="PanelContainer" unique_id=1225319156]
+visible = false
+position = Vector2(408, 432)
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="PanelContainer/Pause Bars" unique_id=1706785948]
+position = Vector2(-43, 0)
+scale = Vector2(2.2872286, 2.2872286)
+texture = ExtResource("2_k0w1u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="PanelContainer/Pause Bars" unique_id=1673108139]
+position = Vector2(106, 0)
+scale = Vector2(2.2872286, 2.2872286)
+texture = ExtResource("2_k0w1u")
+
+[node name="Sprite Ball" type="AnimatedSprite2D" parent="." unique_id=122297452]
+position = Vector2(0, 216)
+sprite_frames = SubResource("SpriteFrames_u8tnp")
+animation = &"Idle"
+autoplay = "Idle"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit to Windows" to="." method="_on_quit_to_windows_pressed"]

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dcixidgvtmo14"]
+
+[ext_resource type="Script" uid="uid://ddxs7shvd1da8" path="res://Scenes/ball.gd" id="1_6whob"]
+[ext_resource type="Script" uid="uid://dnwv4jy3nh56v" path="res://Scenes/club.gd" id="1_hh5uf"]
+[ext_resource type="Script" uid="uid://eikve62ti5og" path="res://Scripts/hit_debug.gd" id="1_v1qfn"]
+[ext_resource type="Texture2D" uid="uid://cv4sskkh0o3cg" path="res://Sprites/icon.svg" id="2_hh5uf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wtcfe"]
+rough = true
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y32ns"]
+radius = 16.124516
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1qfn"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(128, 576)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(960, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(50, 50)
+
+[node name="Node2D" type="Node2D" unique_id=2069042036]
+
+[node name="Ball and Club" type="Node2D" parent="." unique_id=993947069]
+position = Vector2(64, 176)
+
+[node name="Ball" type="RigidBody2D" parent="Ball and Club" unique_id=18687829]
+position = Vector2(248, 56)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_wtcfe")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 0.7
+angular_damp = 0.7
+script = ExtResource("1_6whob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball and Club/Ball" unique_id=1180169512]
+shape = SubResource("CircleShape2D_y32ns")
+
+[node name="Club" type="StaticBody2D" parent="Ball and Club/Ball" unique_id=1171991328 groups=["Club"]]
+position = Vector2(80, 0)
+script = ExtResource("1_hh5uf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball and Club/Ball/Club" unique_id=1984837711]
+shape = SubResource("RectangleShape2D_v1qfn")
+
+[node name="Barriers" type="Node2D" parent="." unique_id=637712005]
+position = Vector2(731, 263)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barriers" unique_id=613119508]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Barriers/StaticBody2D" unique_id=424026352]
+position = Vector2(293, 25)
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Barriers/StaticBody2D" unique_id=1795560547]
+position = Vector2(-795, 25)
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D" unique_id=145184027]
+position = Vector2(-251, 353)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Barriers/StaticBody2D" unique_id=2095782143]
+position = Vector2(-251, -295)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=912158952]
+position = Vector2(-88, -80)
+script = ExtResource("1_v1qfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=118415802]
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_hh5uf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=148699019]
+shape = SubResource("RectangleShape2D_0hol4")
+
+[connection signal="body_entered" from="Ball and Club/Ball" to="Ball and Club/Ball" method="_on_body_entered"]
