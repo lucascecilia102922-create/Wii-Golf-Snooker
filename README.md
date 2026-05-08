@@ -8,3 +8,4 @@
 # Version 2.3 = Added more new Sprites, including some for obstacles, arrow indicator and player body, in addition of a smoke effect on hit. Also, changed the collision to prevent clipping and visual bugs. 
 # Version 2.4 = 2 New Levels, fixed a few more visual bugs and added a new Bumper obstacle.
 # Version 2.5 = New Flag Sprites, Improved Ball Physics and added Pause function (+ Basic pause menu design)
+# Version 2.6 = Game is now Multiplayer! I also added a new function for better input, a camera that follows each player and fixed a few minor bugs with the menu.
